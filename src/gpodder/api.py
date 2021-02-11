@@ -34,6 +34,7 @@ class util:
     normalize_feed_url = gpodder.util.normalize_feed_url
     remove_html_tags = gpodder.util.remove_html_tags
     format_date = gpodder.util.format_date
+    url_get_redirect = gpodder.util.url_get_redirect
 
 
 class query:

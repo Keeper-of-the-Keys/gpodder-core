@@ -691,6 +691,15 @@ def urlopen(url, headers=None, data=None, timeout=None):
     else:
         return opener.open(request, timeout=timeout)
 
+def url_get_redirect(url):
+    """
+    Returns the final URL a permalink refers to.
+    """
+    request = urllib.request.Request(url=url, method='HEAD')
+    result = urllib.request.urlopen(request)
+    logger.warn('url: ' + url + '\n')
+    logger.warn('redir: ' + result.url + '\n')
+    return result.url
 
 def http_request(url, method='HEAD'):
     (scheme, netloc, path, parms, qry, fragid) = urllib.parse.urlparse(url)
